@@ -18,6 +18,10 @@ public class LayoutFilter implements Filter {
     List<Category> list = CategoryModel.getAll();
     req.setAttribute("categoriesWithDetails", list);
 
+
+    List<Category> list1=CategoryModel.getByCatID();
+    req.setAttribute("categoriesWithDetails1", list1);
+
     chain.doFilter(req, resp);
   }
 

@@ -13,7 +13,15 @@ import java.util.Optional;
 public class CategoryModel {
 
     public static List<Category> getAll(){
-        final String sql = "select * from categories";
+        final String sql = "select * from categories where ParentCatID=0";
+        try(Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql).executeAndFetch(Category.class);
+        }
+    }
+
+
+    public static List<Category> getByCatID(){
+        final String sql = "select * from categories ";
         try(Connection con = DbUtils.getConnection()) {
             return con.createQuery(sql).executeAndFetch(Category.class);
         }

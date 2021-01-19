@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
+<jsp:useBean id="categoriesWithDetails" scope="request" type="java.util.List<beans.Category>"/>
+<jsp:useBean id="categoriesWithDetails1" scope="request" type="java.util.List<beans.Category>"/>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
@@ -19,6 +21,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
+            <%--
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
@@ -31,6 +34,34 @@
                     <a class="dropdown-item" href="#">Something else here.</a>
                 </div>
             </li>
+            --%>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <c:forEach var="c" items="${categoriesWithDetails}">
+                        <div class="dropdown dropdown-item dropright" >
+
+                                <a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}" class="btn dropdown-toggle" >${c.catName}</a>
+
+                                <div class="dropdown-content" >
+
+                                <c:forEach var="d" items="${categoriesWithDetails1}">
+                                    <div class="dropdown-item">
+                                        <a href="${pageContext.request.contextPath}/Product/ByCat?id=${d.catID}">${d.catName}</a>
+                                    </div>
+                                </c:forEach>
+                            </div>
+                        </div>
+                    </c:forEach>
+
+                </div>
+            </li>
+
+
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>

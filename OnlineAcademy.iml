@@ -26,11 +26,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="bootstrap" level="project" />
-    <orderEntry type="library" name="font-awesome" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:bootstrap:4.4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:jquery:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:popper.js:1.14.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.taglibs:taglibs-standard-spec:1.2.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.5" level="project" />
     <orderEntry type="library" name="Maven: org.sql2o:sql2o:1.5.4" level="project" />

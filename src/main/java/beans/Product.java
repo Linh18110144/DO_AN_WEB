@@ -3,12 +3,20 @@ package beans;
 public class Product {
     int ProID;
     String ProName, TinyDes, FullDes;
-    int Price, Quantity, CatID;
+    int Price, Quantity, CatID, Cat1ID;
 
     public Product() {
     }
 
-    public Product(int proID, String proName, String tinyDes, String fullDes, int price, int quantity, int catID) {
+    public void setCat1ID(int cat1ID) {
+        Cat1ID = cat1ID;
+    }
+
+    public int getCat1ID() {
+        return Cat1ID;
+    }
+
+    public Product(int proID, String proName, String tinyDes, String fullDes, int price, int quantity, int catID, int cat1ID) {
         ProID = proID;
         ProName = proName;
         TinyDes = tinyDes;
@@ -16,6 +24,7 @@ public class Product {
         Price = price;
         Quantity = quantity;
         CatID = catID;
+        Cat1ID = cat1ID;
     }
 
     public int getProID() {
