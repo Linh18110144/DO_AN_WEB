@@ -25,16 +25,22 @@ public class HomeServlet extends HttpServlet {
 
         switch (path) {
             case "/Index":
-                // HttpSession session = request.getSession();
-                // boolean auth = (boolean) session.getAttribute("auth");
-                // User authUser = (User) session.getAttribute("authUser");
-                // System.out.println(auth);
-                // System.out.println(authUser);
-
                 ServletUtils.forward("/views/vwHome/Index.jsp", request, response);
                 break;
             case "/About":
                 ServletUtils.forward("/views/vwHome/About.jsp", request, response);
+                break;
+            case "/DK":
+                ServletUtils.forward("/views/vwHome/DKvQCHD.jsp", request, response);
+                break;
+            case "/Baomat":
+                ServletUtils.forward("/views/vwHome/AbBaomat.jsp", request, response);
+                break;
+            case "/Hoantien":
+                ServletUtils.forward("/views/vwHome/AbHoantien.jsp", request, response);
+                break;
+            case "/Chamsoc":
+                ServletUtils.forward("/views/vwHome/Chamsoc.jsp", request, response);
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);

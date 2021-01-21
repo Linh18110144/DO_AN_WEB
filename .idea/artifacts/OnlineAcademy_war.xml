@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="OnlineAcademy-1.0-SNAPSHOT.war">
+    <root id="archive" name="ecWebApp-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="OnlineAcademy:war exploded" />
     </root>
   </artifact>
