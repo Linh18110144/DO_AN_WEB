@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/partials/nav.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/partials" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vwAccount/Register.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vwAccount" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/vwMisc/Update.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/vwMisc" />
       </map>
     </option>
   </component>

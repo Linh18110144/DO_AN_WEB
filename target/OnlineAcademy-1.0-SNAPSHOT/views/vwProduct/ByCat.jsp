@@ -9,7 +9,7 @@
     <jsp:body>
         <div class="card">
             <div class="card-header">
-                <h4>Courses</h4>
+                <h4>Products</h4>
             </div>
             <c:choose>
                 <c:when test="${products.size() == 0}">
@@ -23,7 +23,7 @@
                             <c:forEach var="c" items="${products}">
                                 <div class="col-sm-4 mb-3">
                                     <div class="card h-100">
-                                        <img src="${pageContext.request.contextPath}/publics/imgs/sp/${c.proID}/main_thumbs.jpg" alt="${c.proName}" title="${c.proName}" class="card-img-top" />
+                                        <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/${c.proID}/main_thumbs.jpg" alt="${c.proName}" title="${c.proName}" class="card-img-top"/>
                                         <div class="card-body">
                                             <h6 class="card-title">${c.proName}</h6>
                                             <h5 class="card-title text-danger">
@@ -45,6 +45,36 @@
                                 </div>
                             </c:forEach>
                         </div>
+                    </div>
+                    <div class="card-footer">
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" tabindex="-1">
+                                        <i class="fa fa-fast-backward" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <c:forEach var="p" items="${pages}">
+                                    <c:choose>
+                                        <c:when test="${p == currentPage}">
+                                            <li class="page-item active">
+                                                <a class="page-link" href="javascript:;">${p}</a>
+                                            </li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <li class="page-item">
+                                                <a class="page-link" href="?id=${catID}&page=${p}">${p}</a>
+                                            </li>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fa fa-fast-forward" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </c:otherwise>
             </c:choose>

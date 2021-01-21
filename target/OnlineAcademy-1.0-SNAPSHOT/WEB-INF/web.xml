@@ -6,7 +6,7 @@
 
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>/publics/*</url-pattern>
+        <url-pattern>/publicsss/*</url-pattern>
     </servlet-mapping>
 
     <filter-mapping>

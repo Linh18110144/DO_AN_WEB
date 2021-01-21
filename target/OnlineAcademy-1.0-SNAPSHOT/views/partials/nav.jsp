@@ -47,14 +47,14 @@
 
                                 <a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}" class="btn dropdown-toggle" >${c.catName}</a>
 
-                                <div class="dropdown-content" >
+                                <%--<div class="dropdown-content" >
 
                                 <c:forEach var="d" items="${categoriesWithDetails1}">
                                     <div class="dropdown-item">
                                         <a href="${pageContext.request.contextPath}/Product/ByCat?id=${d.catID}">${d.catName}</a>
                                     </div>
                                 </c:forEach>
-                            </div>
+                            </div>--%>
                         </div>
                     </c:forEach>
 
