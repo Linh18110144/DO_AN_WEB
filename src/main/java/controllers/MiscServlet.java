@@ -70,7 +70,13 @@ public class MiscServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
+        if (path == null || path.equals("/")) {
+            path = "/Index";
+        }
         switch (path) {
+            case "/Index":
+                ServletUtils.forward("/views/vwMisc/Index.jsp", request, response);
+                break;
             case "/Upload":
                 ServletUtils.forward("/views/vwMisc/Upload.jsp", request, response);
                 break;

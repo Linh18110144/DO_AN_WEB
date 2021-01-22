@@ -20,7 +20,10 @@
                     </span>
                 </p>
                 <p class="card-text">${product.fullDes}</p>
+
+
             </div>
+
         </div>
     </jsp:body>
 </t:main>

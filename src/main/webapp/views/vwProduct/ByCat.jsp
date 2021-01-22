@@ -36,8 +36,8 @@
                                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                                 Details
                                             </a>
-                                            <a class="btn btn-sm btn-outline-success" href="#" role="button">
-                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                            <a class="btn btn-sm btn-outline-success" href="${pageContext.request.contextPath}/Misc/Index" role="button">
+                                                <i class="fa fa-play" aria-hidden="true"></i>
                                                 Add to cart
                                             </a>
                                         </div>

@@ -15,7 +15,7 @@
             theme: 'fa',
             // showCaption: false,
             dropZoneEnabled: false,
-            allowedFileExtensions: ['jpg', 'png', 'gif']
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'mp4']
         });
     </script>
   </jsp:attribute>
