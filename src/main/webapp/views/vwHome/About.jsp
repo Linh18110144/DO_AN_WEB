@@ -1,18 +1,24 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<link href="../../publicsss/css/About.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/publicsss//css/About.css" rel="stylesheet">
 
 <t:home>
     <jsp:body>
         <div class="card">
-            <div class="card-header">
-                <h4 style="color: coral">About</h4>
-            </div>
             <section id="hero" class="d-flex align-items-center">
                 <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-                    <h1>Your New Online Presence with Bethany</h1>
-                    <h2>We are team of talanted designers making websites with Bootstrap</h2>
-                    <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                    <h1>WEBSITE thực hiện cho mục đích học tập</h1>
+                    <h2>Được thực hiện bởi các thành viên:
+                        <br>
+                        Thiều Văn Hoàng - 18110114
+                        <br>
+                        Cao Thị Thùy Linh - 18110
+                        <br>
+
+                        <br>
+                        Nguyễn Ngọc Minh Thư - 18110210
+                    </h2>
+                    <a href="${pageContext.request.contextPath}/Home" class="btn-get-started scrollto">Trang chủ</a>
                 </div>
             </section><!-- End Hero -->
         </div>
