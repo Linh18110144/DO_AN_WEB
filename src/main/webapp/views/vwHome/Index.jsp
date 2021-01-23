@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<link href="${pageContext.request.contextPath}/publicsss//css/About.css" rel="stylesheet">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 <!-- Favicons -->
@@ -31,7 +30,7 @@
             <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
                 <h1>OnlineAcademy.</h1>
                 <h2>Nền tảng hỗ trợ giảng dạy đào tạo trực tuyến</h2>
-                <a href="#about" class="btn-get-started scrollto">Tìm hiểu ngay!</a>
+                <a href="${pageContext.request.contextPath}/Product" class="btn-get-started scrollto">Tìm hiểu ngay!</a>
             </div>
         </section><!-- End Hero -->
 
@@ -112,12 +111,12 @@
 
                         <div class="col-lg-3 col-6 text-center">
                             <span data-toggle="counter-up">232</span>
-                            <p>Nhân viên hỗ trợ</p>
+                            <p>Giảng viên</p>
                         </div>
 
                         <div class="col-lg-3 col-6 text-center">
-                            <span data-toggle="counter-up">521</span>
-                            <p>Giảng viên</p>
+                            <span data-toggle="counter-up">5213</span>
+                            <p>Người dùng</p>
                         </div>
 
                         <div class="col-lg-3 col-6 text-center">
@@ -147,7 +146,7 @@
                                     Nâng cao kiến thức, phát triển tư duy
                                 </p>
                                 <div class="text-center">
-                                    <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                                    <a href="${pageContext.request.contextPath}/Product" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -211,33 +210,33 @@
                             <div class="row">
                                 <div class="col-md-6 d-flex align-items-stretch">
                                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-                                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                        <h4><a href="">Lorem Ipsum</a></h4>
-                                        <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                        <div class="icon"><i class="icofont-cart-alt"></i></div>
+                                        <h4><a href="">Mua hàng</a></h4>
+                                        <p>Các chương trình khuyến mãi và các chính sách mua hàng đặc biệt chỉ có ở đây</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-                                        <div class="icon"><i class="bx bx-file"></i></div>
-                                        <h4><a href="">Sed ut perspiciatis</a></h4>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                        <div class="icon"><i class="icofont-crown"></i></div>
+                                        <h4><a href="">Khách hàng</a></h4>
+                                        <p>Phương châm: "Khách hàng là thượng đế". Phục vụ tận tâm khách hàng của chúng tôi</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 d-flex align-items-stretch mt-4">
                                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-                                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                                        <h4><a href="">Magni Dolores</a></h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                                        <div class="icon"><i class="icofont-diskette"></i></div>
+                                        <h4><a href="">Dữ liệu</a></h4>
+                                        <p>Luôn cập nhập những chương trình dạy học mới nhất và uy tín</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 d-flex align-items-stretch mt-4">
                                     <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-                                        <div class="icon"><i class="bx bx-world"></i></div>
-                                        <h4><a href="">Nemo Enim</a></h4>
-                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                                        <div class="icon"><i class="icofont-live-support"></i></div>
+                                        <h4><a href="">Tư vấn</a></h4>
+                                        <p>Nhân viên tư vấn nhiệt tình 24/7, luôn hỗ trợ cho người dùng từ những thứ nhỏ nhất</p>
                                     </div>
                                 </div>
 
@@ -253,8 +252,7 @@
                 <div class="container">
 
                     <div class="section-title" data-aos="fade-left">
-                        <h2>Portfolio</h2>
-                        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                        <h2>Các khóa học tiêu biểu</h2>
                     </div>
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -400,8 +398,8 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="section-title" data-aos="fade-right">
-                                <h2>Testimonials</h2>
-                                <p>Magnam dolores commodi suscipit uisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                                <h2>Các giảng viên ưu tú</h2>
+                                <p>Giảng viên của chúng tôi đến từ các trường đại học danh tiếng với hi vọng đưa các khóa có ích của họ đến với mọi người.</p>
                             </div>
                         </div>
                         <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
@@ -410,56 +408,56 @@
                                 <div class="testimonial-item">
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                                        Hello
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                     <img src="${pageContext.request.contextPath}/publicsss/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                                     <h3>Saul Goodman</h3>
-                                    <h4>Ceo &amp; Founder</h4>
+                                    <h4>Ceo &amp; Founder of OnlineAcademy</h4>
                                 </div>
 
                                 <div class="testimonial-item">
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                                        Hello
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                     <img src="${pageContext.request.contextPath}/publicsss/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                                     <h3>Sara Wilsson</h3>
-                                    <h4>Designer</h4>
+                                    <h4>Cố vấn đào tạo</h4>
                                 </div>
 
                                 <div class="testimonial-item">
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                        Hello
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                     <img src="${pageContext.request.contextPath}/publicsss/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                                     <h3>Jena Karlis</h3>
-                                    <h4>Store Owner</h4>
+                                    <h4>Giảng viên</h4>
                                 </div>
 
                                 <div class="testimonial-item">
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                                        Hello
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                     <img src="${pageContext.request.contextPath}/publicsss/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                                     <h3>Matt Brandon</h3>
-                                    <h4>Freelancer</h4>
+                                    <h4>Giảng viên</h4>
                                 </div>
 
                                 <div class="testimonial-item">
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                                        Hello
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                     <img src="${pageContext.request.contextPath}/publicsss/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                                     <h3>John Larson</h3>
-                                    <h4>Entrepreneur</h4>
+                                    <h4>Giảng viên</h4>
                                 </div>
 
                             </div>
@@ -476,8 +474,8 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="section-title" data-aos="fade-right">
-                                <h2>Team</h2>
-                                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+                                <h2>Đội ngũ của chúng tôi</h2>
+                                <p>Gồm những sinh viên Dễ thương, đầy khả ái của Đại học Sư Phạm Kĩ Thuật Tp.HCM.</p>
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -487,9 +485,9 @@
                                     <div class="member" data-aos="zoom-in" data-aos-delay="100">
                                         <div class="pic"><img src="${pageContext.request.contextPath}/publicsss/assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
                                         <div class="member-info">
-                                            <h4>Walter White</h4>
-                                            <span>Chief Executive Officer</span>
-                                            <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                                            <h4>Thiều Văn Hoàng</h4>
+                                            <span>Nam</span>
+                                            <p>18110114</p>
                                             <div class="social">
                                                 <a href=""><i class="ri-twitter-fill"></i></a>
                                                 <a href=""><i class="ri-facebook-fill"></i></a>
@@ -504,9 +502,9 @@
                                     <div class="member" data-aos="zoom-in" data-aos-delay="200">
                                         <div class="pic"><img src="${pageContext.request.contextPath}/publicsss/assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
                                         <div class="member-info">
-                                            <h4>Sarah Jhonson</h4>
-                                            <span>Product Manager</span>
-                                            <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                                            <h4>Nguyễn Ngọc Minh Thư</h4>
+                                            <span>Nữ</span>
+                                            <p>18110210</p>
                                             <div class="social">
                                                 <a href=""><i class="ri-twitter-fill"></i></a>
                                                 <a href=""><i class="ri-facebook-fill"></i></a>
@@ -521,9 +519,9 @@
                                     <div class="member" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="pic"><img src="${pageContext.request.contextPath}/publicsss/assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
                                         <div class="member-info">
-                                            <h4>William Anderson</h4>
-                                            <span>CTO</span>
-                                            <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                                            <h4>Cao Thị Thùy Linh</h4>
+                                            <span>Nữ</span>
+                                            <p>18110144</p>
                                             <div class="social">
                                                 <a href=""><i class="ri-twitter-fill"></i></a>
                                                 <a href=""><i class="ri-facebook-fill"></i></a>
@@ -538,9 +536,9 @@
                                     <div class="member" data-aos="zoom-in" data-aos-delay="400">
                                         <div class="pic"><img src="${pageContext.request.contextPath}/publicsss/assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
                                         <div class="member-info">
-                                            <h4>Amanda Jepson</h4>
-                                            <span>Accountant</span>
-                                            <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                                            <h4>Huỳnh Trần Thảo Nhi</h4>
+                                            <span>Nữ</span>
+                                            <p>18110169</p>
                                             <div class="social">
                                                 <a href=""><i class="ri-twitter-fill"></i></a>
                                                 <a href=""><i class="ri-facebook-fill"></i></a>

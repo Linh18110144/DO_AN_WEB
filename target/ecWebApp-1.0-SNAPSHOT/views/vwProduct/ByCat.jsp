@@ -5,6 +5,7 @@
 
 <jsp:useBean id="products" scope="request" type="java.util.List<beans.Product>"/>
 
+
 <t:main>
     <jsp:body>
         <div class="card">
@@ -23,7 +24,7 @@
                             <c:forEach var="c" items="${products}">
                                 <div class="col-sm-4 mb-3">
                                     <div class="card h-100">
-                                        <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/${c.proID}/main_thumbs.jpg" alt="${c.proName}" title="${c.proName}" class="card-img-top"/>
+                                        <img width="600px" height="200px" src="${pageContext.request.contextPath}/publicsss/imgs/sp/${c.proID}/main_thumbs.jpg" alt="${c.proName}" title="${c.proName}" class="card-img-top"/>
                                         <div class="card-body">
                                             <h6 class="card-title">${c.proName}</h6>
                                             <h5 class="card-title text-danger">

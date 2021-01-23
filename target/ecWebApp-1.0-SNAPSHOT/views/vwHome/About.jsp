@@ -12,9 +12,9 @@
                         <br>
                         Thiều Văn Hoàng - 18110114
                         <br>
-                        Cao Thị Thùy Linh - 18110
+                        Cao Thị Thùy Linh - 18110144
                         <br>
-
+                        Huỳnh Trần Thảo Nhi-18110169
                         <br>
                         Nguyễn Ngọc Minh Thư - 18110210
                     </h2>

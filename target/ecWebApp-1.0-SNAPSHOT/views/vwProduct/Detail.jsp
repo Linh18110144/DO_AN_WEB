@@ -12,7 +12,7 @@
                 <h4>${product.proName}</h4>
             </div>
             <div class="card-body">
-                <img alt="${product.proName}" title="${product.proName}" src="${pageContext.request.contextPath}/publicsss/imgs/sp/${product.proID}/main_thumbs.jpg">
+                <img width="800px" height="400px" alt="${product.proName}" title="${product.proName}" src="${pageContext.request.contextPath}/publicsss/imgs/sp/${product.proID}/main_thumbs.jpg">
                 <p class="card-text mt-3">
                     Giá bán:
                     <span class="text-danger font-weight-bold">
