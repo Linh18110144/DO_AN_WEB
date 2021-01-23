@@ -1,7 +1,9 @@
 package filters;
 
 import beans.Category;
+import beans.ChildCategory;
 import models.CategoryModel;
+import models.ChildCategoryModel;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -19,8 +21,8 @@ public class LayoutFilter implements Filter {
     req.setAttribute("categoriesWithDetails", list);
 
 
-    List<Category> list1=CategoryModel.getByCatID();
-    req.setAttribute("categoriesWithDetails1", list1);
+    List<ChildCategory> list1= ChildCategoryModel.getAll();
+    req.setAttribute("childcategoriesWithDetails", list1);
 
     chain.doFilter(req, resp);
   }

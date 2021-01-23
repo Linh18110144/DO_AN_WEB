@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:main>
+<t:home>
   <jsp:attribute name="css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
   </jsp:attribute>
@@ -18,13 +18,34 @@
                 return;
             }
 
+            const password = $('#txtPassword').val();
+            if (password.length === 0) {
+                alert('Not available.');
+                return;
+            }
+            const confirm = $('#txtConfirm').val();
+            if (confirm.char === 0) {
+                alert('Not available.');
+                return;
+            }
+
+            const email = $('#txtEmail').val();
             $.getJSON('${pageContext.request.contextPath}/Account/IsAvailable?user=' + username, function (data) {
                 if (data === true) {
-                    $('#frmRegister').off('submit').submit();
+                    $.getJSON('${pageContext.request.contextPath}/Account/IsEmailAvailable?user=' + email, function (data1) {
+                        if (data1 === true | (email.length === 0) ) {
+                            $('#frmRegister').off('submit').submit();
+                        } else {
+                            alert('Email is used.');
+                        }
+                    });
+                    e.preventDefault();
                 } else {
                     alert('Not available.');
                 }
             });
+
+
         });
 
         $('#txtDOB').datetimepicker({
@@ -81,4 +102,4 @@
             </div>
         </form>
     </jsp:body>
-</t:main>
+</t:home>

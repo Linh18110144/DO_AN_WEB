@@ -60,6 +60,15 @@ public class ProductFEServlet extends HttpServlet {
 
                 ServletUtils.forward("/views/vwProduct/ByCat.jsp", request, response);
                 break;
+
+            case "/ByChildCat":
+                int childCatID = Integer.parseInt(request.getParameter("id"));
+                List<Product> list3 = ProductModel.findByChildCatID(childCatID);
+                request.setAttribute("products3", list3);
+
+                ServletUtils.forward("/views/vwProduct/ByChildCat.jsp", request, response);
+                break;
+
             case "/Detail":
                 int proID = Integer.parseInt(request.getParameter("id"));
                 Optional<Product> c = ProductModel.findByID(proID);
@@ -69,6 +78,13 @@ public class ProductFEServlet extends HttpServlet {
                 } else {
                     ServletUtils.redirect("/Home", request, response);
                 }
+                break;
+            case "/Search":
+                String proName = request.getParameter("id");
+                List<Product> list2 = ProductModel.findByProName(proName);
+                request.setAttribute("products2", list2);
+
+                ServletUtils.forward("/views/vwProduct/Search.jsp", request, response);
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);

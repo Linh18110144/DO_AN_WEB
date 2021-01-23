@@ -42,6 +42,7 @@ public class AccountServlet extends HttpServlet {
         String password = request.getParameter("password");
         String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
 
+
         Date dob = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         try {
@@ -117,6 +118,15 @@ public class AccountServlet extends HttpServlet {
                 response.setCharacterEncoding("utf-8");
                 out.print(!user.isPresent());
                 out.flush();
+                break;
+            case "/IsEmailAvailable":
+                String email = request.getParameter("user");
+                Optional<User> user1 = UserModel.findByEmail(email);
+                PrintWriter out1 = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("utf-8");
+                out1.print(!user1.isPresent());
+                out1.flush();
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);

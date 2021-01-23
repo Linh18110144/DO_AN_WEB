@@ -36,8 +36,7 @@ public class AminCategoryServlet extends HttpServlet {
 
     private void addCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("CatName");
-        int parentID = request.getIntHeader("ParentCatID");
-        Category c = new Category(-1, name, parentID);
+        Category c = new Category(-1, name);
         CategoryModel.add(c);
         ServletUtils.forward("/views/vwCategory/Add.jsp",request,response);
     }
@@ -51,8 +50,7 @@ public class AminCategoryServlet extends HttpServlet {
     private void updateCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("CatID"));
         String name = request.getParameter("CatName");
-        int parentID = request.getIntHeader("ParentCatID");
-        Category c = new Category(id, name, parentID);
+        Category c = new Category(id, name);
         CategoryModel.update(c);
         ServletUtils.redirect("/Admin/Category", request, response);
     }

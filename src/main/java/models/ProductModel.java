@@ -44,6 +44,25 @@ public class ProductModel {
         }
     }
 
+    public static List<Product> findByChildCatID(int childCatID){
+        String sql = "select * from products where ChildCatID = :ChildCatID";
+        try(Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("ChildCatID", childCatID)
+                    .executeAndFetch(Product.class);
+        }
+    }
+
+    public static List<Product> findByProName(String proName) {
+        String sql = "select * from products where match (ProName) AGAINST (':proName' IN NATURAL LANGUAGE MODE)";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("proName", proName)
+                    .executeAndFetch(Product.class);
+        }
+    }
+
+
     public static Optional<Product> findByID(int id) {
         String sql = "select * from products where ProID = :ProID";
         try (Connection con = DbUtils.getConnection()) {

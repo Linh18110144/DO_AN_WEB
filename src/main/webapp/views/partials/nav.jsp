@@ -2,7 +2,7 @@
 
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
 <jsp:useBean id="categoriesWithDetails" scope="request" type="java.util.List<beans.Category>"/>
-<jsp:useBean id="categoriesWithDetails1" scope="request" type="java.util.List<beans.Category>"/>
+<jsp:useBean id="childcategoriesWithDetails" scope="request" type="java.util.List<beans.Category>"/>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
@@ -23,21 +23,25 @@
                     About
                 </a>
             </li>
+
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Courses
-                </a>
-
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  Dropdown  </a>
+                <ul class="dropdown-menu">
                     <c:forEach var="c" items="${categoriesWithDetails}">
-                        <div class="dropdown dropdown-item dropright" >
+                        <li><a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}" class="dropdown-item" >${c.catName}</a>
+                            <ul class="submenu dropdown-menu">
 
-                                <a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}" class="btn dropdown-toggle" >${c.catName}</a>
-                        </div>
+                                <c:forEach var="d" items="${childcategoriesWithDetails}">
+                                    <c:if test="${c.catID==d.catID}">
+                                        <li><a href="${pageContext.request.contextPath}/Product/ByChildCat?id=${d.childCatID}" class="dropdown-item">${d.childCatName} </a></li>
+                                    </c:if>
+                                </c:forEach>
+
+                            </ul>
+                        </li>
                     </c:forEach>
 
-                </div>
+                </ul>
             </li>
 
 
@@ -45,13 +49,13 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <form id="frmSearch" class="form-inline my-2 my-lg-0"  action="${pageContext.request.contextPath}/Product/Search">
+            <input id="id" name="id" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></form>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="javascript: $('#frmSearch').submit();">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 Search
-            </button>
-        </form>
+            </a>
+
         <ul class="navbar-nav">
             <c:choose>
                 <c:when test="${auth}">

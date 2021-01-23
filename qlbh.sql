@@ -3,15 +3,15 @@
 
  Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 100417
+ Source Server Version : 100416
  Source Host           : localhost:3306
  Source Schema         : qlbh
 
  Target Server Type    : MySQL
- Target Server Version : 100417
+ Target Server Version : 100416
  File Encoding         : 65001
 
- Date: 22/01/2021 00:45:18
+ Date: 23/01/2021 18:42:16
 */
 
 SET NAMES utf8mb4;
@@ -35,6 +35,40 @@ INSERT INTO `categories` VALUES (2, 'Nhạc cụ');
 INSERT INTO `categories` VALUES (3, 'Thiết kế');
 INSERT INTO `categories` VALUES (4, 'Nghệ thuật - đời sống');
 INSERT INTO `categories` VALUES (5, 'Phong thủy/ Nhân tướng học');
+
+-- ----------------------------
+-- Table structure for childcategories
+-- ----------------------------
+DROP TABLE IF EXISTS `childcategories`;
+CREATE TABLE `childcategories`  (
+  `ChildCatID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ChildCatName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `CatID` int(11) NOT NULL,
+  PRIMARY KEY (`ChildCatID`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of childcategories
+-- ----------------------------
+INSERT INTO `childcategories` VALUES (1, 'Mobile/ App', 1);
+INSERT INTO `childcategories` VALUES (2, 'Web development', 1);
+INSERT INTO `childcategories` VALUES (3, 'Cơ sở dữ liệu', 1);
+INSERT INTO `childcategories` VALUES (4, 'Bảo mật', 1);
+INSERT INTO `childcategories` VALUES (5, 'Thiết bị điện tử', 1);
+INSERT INTO `childcategories` VALUES (6, 'Nhạc cụ', 2);
+INSERT INTO `childcategories` VALUES (7, 'Sản xuất và sáng tác', 2);
+INSERT INTO `childcategories` VALUES (8, 'Luyện thanh', 2);
+INSERT INTO `childcategories` VALUES (9, '3D, Animation', 3);
+INSERT INTO `childcategories` VALUES (10, 'Kiến trúc, nội thất', 3);
+INSERT INTO `childcategories` VALUES (11, 'Tư duy thiết kế', 3);
+INSERT INTO `childcategories` VALUES (12, 'Thiết kế đồ họa', 3);
+INSERT INTO `childcategories` VALUES (13, 'Phần mền thiết kế', 3);
+INSERT INTO `childcategories` VALUES (14, 'Làm đẹp', 4);
+INSERT INTO `childcategories` VALUES (15, 'Giải trí', 4);
+INSERT INTO `childcategories` VALUES (16, 'Nấu ăn - pha chế', 4);
+INSERT INTO `childcategories` VALUES (17, 'Sức khỏe tinh thần', 4);
+INSERT INTO `childcategories` VALUES (18, 'Phong thủy', 5);
+INSERT INTO `childcategories` VALUES (19, 'Nhân tướng học', 5);
 
 -- ----------------------------
 -- Table structure for orderdetails
@@ -73,7 +107,8 @@ CREATE TABLE `products`  (
   `FullDes` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Price` int(11) NOT NULL,
   `CatID` int(11) NOT NULL,
-  PRIMARY KEY (`ProID`) USING BTREE
+  PRIMARY KEY (`ProID`) USING BTREE,
+  FULLTEXT INDEX `ProName`(`ProName`)
 ) ENGINE = MyISAM AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -154,6 +189,11 @@ CREATE TABLE `users`  (
   `dob` date NOT NULL,
   `permission` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (1, 'admin', '$2a$12$JxSKbgDRWGJTVh4Yp5vEy.QCpM0Ob4soDFq3TEu0Db8lAMRpvcdHu', 'administrator', 'admin@gmail.com', '2021-01-06', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

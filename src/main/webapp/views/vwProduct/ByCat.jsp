@@ -38,7 +38,7 @@
                                             </a>
                                             <a class="btn btn-sm btn-outline-success" href="${pageContext.request.contextPath}/Misc/Index" role="button">
                                                 <i class="fa fa-play" aria-hidden="true"></i>
-                                                Add to cart
+                                                View this course
                                             </a>
                                         </div>
                                     </div>

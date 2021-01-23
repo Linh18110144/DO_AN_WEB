@@ -2,11 +2,8 @@ package models;
 
 import beans.Category;
 import org.sql2o.Connection;
-import org.sql2o.Sql2o;
 import utils.DbUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 

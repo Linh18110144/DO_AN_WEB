@@ -3,16 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<jsp:useBean id="products" scope="request" type="java.util.List<beans.Product>"/>
+<jsp:useBean id="products2" scope="request" type="java.util.List<beans.Product>"/>
 
 <t:main>
+
     <jsp:body>
         <div class="card">
             <div class="card-header">
                 <h4>Courses</h4>
             </div>
             <c:choose>
-                <c:when test="${products.size() == 0}">
+                <c:when test="${products2.size() == 0}">
                     <div class="card-body">
                         <p class="card-text">Không có dữ liệu.</p>
                     </div>
@@ -20,10 +21,10 @@
                 <c:otherwise>
                     <div class="card-body">
                         <div class="row">
-                            <c:forEach var="c" items="${products}">
+                            <c:forEach var="c" items="${products2}">
                                 <div class="col-sm-4 mb-3">
                                     <div class="card h-100">
-                                        <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/${c.proID}/main_thumbs.jpg" alt="${c.proName}" title="${c.proName}" class="card-img-top"/>
+                                        <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/${c.proID}/main_thumbs.jpg" alt="${c.proName}" title="${c.proName}" width="100" height="200" class="card-img-top"/>
                                         <div class="card-body">
                                             <h6 class="card-title">${c.proName}</h6>
                                             <h5 class="card-title text-danger">

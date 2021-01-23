@@ -23,6 +23,22 @@ public class UserModel {
         }
     }
 
+    public static Optional<User> findByEmail(String email) {
+        final String sql = "select * from users where email = :email";
+        try (Connection con = DbUtils.getConnection()) {
+            List<User> list = con.createQuery(sql)
+                    .addParameter("email", email)
+                    .executeAndFetch(User.class);
+
+            if (list.size() == 0) {
+                return Optional.empty();
+            }
+
+            return Optional.ofNullable(list.get(0));
+        }
+    }
+
+
     public static void add(User user) {
         final String sql = "INSERT INTO users (username, password, name, email, dob, permission) VALUES (:username,:password,:name,:email,:dob,:permission)";
         try (Connection con = DbUtils.getConnection()) {
