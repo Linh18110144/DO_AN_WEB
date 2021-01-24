@@ -15,15 +15,6 @@ public class ProductModel {
         }
     }
 
-    public static List<Product> findByCatID(int catID) {
-        String sql = "select * from products where CatID = :CatID";
-        try (Connection con = DbUtils.getConnection()) {
-            return con.createQuery(sql)
-                    .addParameter("CatID", catID)
-                    .executeAndFetch(Product.class);
-        }
-    }
-
     public static int countByCatID(int catID) {
         String sql = "select count(*) from products where CatID = :CatID";
         try (Connection con = DbUtils.getConnection()) {
@@ -53,12 +44,23 @@ public class ProductModel {
         }
     }
 
-    public static List<Product> findByProName(String proName) {
-        String sql = "select * from products where match (ProName) AGAINST (':proName' IN NATURAL LANGUAGE MODE)";
+    public static List<Product> findByProName(String proName, int limit2, int offset2) {
+        String sql = "select * from products where match (ProName) AGAINST (:proName IN NATURAL LANGUAGE MODE) limit :limit offset :offset";
         try (Connection con = DbUtils.getConnection()) {
             return con.createQuery(sql)
                     .addParameter("proName", proName)
+                    .addParameter("limit", limit2)
+                    .addParameter("offset", offset2)
                     .executeAndFetch(Product.class);
+        }
+    }
+
+    public static int countByProName(String proName) {
+        String sql = "select count(*) from products where match (ProName) AGAINST (:proName IN NATURAL LANGUAGE MODE)";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("proName", proName)
+                    .executeScalar(Integer.class);
         }
     }
 
@@ -75,6 +77,24 @@ public class ProductModel {
             }
 
             return Optional.ofNullable(list.get(0));
+        }
+    }
+
+    public static int countAll() {
+        String sql = "select count(*) from products";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .executeScalar(Integer.class);
+        }
+    }
+
+    public static List<Product> getAll(int limit1, int offset1) {
+        String sql = "select * from products limit :limit offset :offset";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("limit", limit1)
+                    .addParameter("offset", offset1)
+                    .executeAndFetch(Product.class);
         }
     }
 }

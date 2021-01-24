@@ -54,16 +54,16 @@
                                         <i class="fa fa-fast-backward" aria-hidden="true"></i>
                                     </a>
                                 </li>
-                                <c:forEach var="p" items="${pages}">
+                                <c:forEach var="p" items="${pages1}">
                                     <c:choose>
-                                        <c:when test="${p == currentPage}">
+                                        <c:when test="${p == currentPage1}">
                                             <li class="page-item active">
                                                 <a class="page-link" href="javascript:;">${p}</a>
                                             </li>
                                         </c:when>
                                         <c:otherwise>
                                             <li class="page-item">
-                                                <a class="page-link" href="?id=${catID}&page=${p}">${p}</a>
+                                                <a class="page-link" href="?id=${catID}&page1=${p}">${p}</a>
                                             </li>
                                         </c:otherwise>
                                     </c:choose>

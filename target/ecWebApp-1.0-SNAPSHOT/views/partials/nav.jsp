@@ -5,7 +5,7 @@
 <jsp:useBean id="childcategoriesWithDetails" scope="request" type="java.util.List<beans.Category>"/>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/Home">
         <i class="fa fa-home fa-lg"></i>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

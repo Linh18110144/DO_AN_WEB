@@ -26,7 +26,29 @@ public class ProductFEServlet extends HttpServlet {
         }
         switch (path) {
             case "/Index":
-                List<Product> list1 = ProductModel.getAll();
+                int catID1 = ProductModel.countAll();
+                request.setAttribute("catID", catID1);
+
+                final int LIMIT1 = 6;
+                int currentPage1 = 1;
+                if (request.getParameter("page1") != null) {
+                    currentPage1 = Integer.parseInt(request.getParameter("page1"));
+                }
+                int offset1 = (currentPage1 - 1) * LIMIT1;
+                request.setAttribute("currentPage1", currentPage1);
+
+                int total1 = catID1;
+                int nPages1 = total1 / LIMIT1;
+                if (total1 % LIMIT1 > 0)
+                    nPages1++;
+                int[] pages1 = new int[nPages1];
+                for (int i = 0; i < nPages1; i++) {
+                    pages1[i] = i + 1;
+                }
+                request.setAttribute("pages1", pages1);
+
+                List<Product> list1 = ProductModel.getAll(LIMIT1, offset1);
+
                 request.setAttribute("products1", list1);
                 ServletUtils.forward("/views/vwProduct/Index.jsp", request, response);
                 break;
@@ -81,7 +103,30 @@ public class ProductFEServlet extends HttpServlet {
                 break;
             case "/Search":
                 String proName = request.getParameter("id");
-                List<Product> list2 = ProductModel.findByProName(proName);
+                request.setAttribute("proName", proName);
+                int catID2 = ProductModel.countByProName(proName);
+                request.setAttribute("catID2", catID2);
+
+                final int LIMIT2 = 6;
+                int currentPage2 = 1;
+                if (request.getParameter("page2") != null) {
+                    currentPage2 = Integer.parseInt(request.getParameter("page2"));
+                }
+                int offset2 = (currentPage2 - 1) * LIMIT2;
+                request.setAttribute("currentPage2", currentPage2);
+
+                int total2 = catID2;
+                int nPages2 = total2 / LIMIT2;
+                if (total2 % LIMIT2 > 0)
+                    nPages2++;
+                int[] pages2 = new int[nPages2];
+                for (int i = 0; i < nPages2; i++) {
+                    pages2[i] = i + 1;
+                }
+                request.setAttribute("pages2", pages2);
+
+                List<Product> list2 = ProductModel.findByProName(proName, LIMIT2, offset2);
+
                 request.setAttribute("products2", list2);
 
                 ServletUtils.forward("/views/vwProduct/Search.jsp", request, response);

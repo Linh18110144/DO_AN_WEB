@@ -1,35 +1,27 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-
+<jsp:useBean id="product5" scope="request" type="beans.Product"/>
 
 <t:main>
     <jsp:attribute name="css">
         <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
     </jsp:attribute>
-  <jsp:attribute name="js">
+    <jsp:attribute name="js">
     <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
   </jsp:attribute>
 
     <jsp:body>
         <div class="container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/hpHOuoic3WA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p>Tên khóa học</p>
+            <video id="plyr" width="800" height="400" poster="${pageContext.request.contextPath}/publicsss/imgs/sp/${product5.proID}/main_thumbs.jpg" controls playsinline>
+                <source type="video/mp4" src="${pageContext.request.contextPath}/publicsss/clips/${product5.proID}/1.mp4">
+            </video>
+            <br>
+            <p><h2>${product5.proName}</h2></p>
 
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
+
         </div>
     </jsp:body>
 </t:main>
