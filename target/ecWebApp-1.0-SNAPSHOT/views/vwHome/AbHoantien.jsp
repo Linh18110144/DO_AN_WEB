@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<t:All>
+<t:home
+>
     <jsp:body>
         <div class="card">
         <div class="card-header">
@@ -72,4 +73,4 @@
             </p>
         </div>
     </jsp:body>
-</t:All>
+</t:home>

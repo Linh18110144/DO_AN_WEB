@@ -24,28 +24,7 @@
 
 <t:home>
     <jsp:body>
-        <header id="header" class="fixed-top d-flex align-items-center">
-            <div class="container">
-                <div class="header-container d-flex align-items-center">
-                    <div class="logo mr-auto">
-                        <h1 class="text-light"><a href="${pageContext.request.contextPath}/Product"><span>OnlineAcademy</span></a></h1>
-                    </div>
 
-                    <nav class="nav-menu d-none d-lg-block">
-                        <ul>
-                            <li class="active"><a href="#header">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Courses</a></li>
-                            <li><a href="#team">Team</a></li>
-                            <li><a href="#contact">Contact</a></li>
-
-                            <li class="get-started"><a href="${pageContext.request.contextPath}/Product">Get Started</a></li>
-                        </ul>
-                    </nav><!-- .nav-menu -->
-                </div><!-- End Header Container -->
-            </div>
-        </header><!-- End Header -->
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex align-items-center">
             <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
@@ -613,7 +592,7 @@
                                 </div>
                             </div>
 
-                            <form action="${pageContext.request.contextPath}/publicsss/assets/contact.php" method="post" role="form" class="php-email-form mt-4">
+                            <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
                                 <div class="form-row">
                                     <div class="col-md-6 form-group">
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />

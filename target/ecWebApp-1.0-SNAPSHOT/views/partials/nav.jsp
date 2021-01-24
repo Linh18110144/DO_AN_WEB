@@ -50,7 +50,7 @@
             </li>
         </ul>
         <form id="frmSearch" class="form-inline my-2 my-lg-0"  action="${pageContext.request.contextPath}/Product/Search">
-            <input id="id" name="txt" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></form>
+            <input id="id" name="id" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></form>
             <a class="btn btn-outline-success my-2 my-sm-0" href="javascript: $('#frmSearch').submit();">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 Search
