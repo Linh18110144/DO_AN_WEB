@@ -22,9 +22,33 @@
 <link href="${pageContext.request.contextPath}/publicsss/assets/css/style.css" rel="stylesheet">
 
 
-<t:home>
+<t:index>
     <jsp:body>
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top d-flex align-items-center">
+            <div class="container">
+                <div class="header-container d-flex align-items-center">
+                    <div class="logo mr-auto">
+                        <h1 class="text-light"><a href="${pageContext.request.contextPath}/Product"><span>OnlineAcademy</span></a></h1>
+                        <!-- Uncomment below if you prefer to use an image logo -->
+                        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                    </div>
 
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <li class="active"><a href="#header">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#contact">Contact</a></li>
+
+                            <li class="get-started"><a href="${pageContext.request.contextPath}/Product">Get Started</a></li>
+                        </ul>
+                    </nav><!-- .nav-menu -->
+                </div><!-- End Header Container -->
+            </div>
+        </header><!-- End Header -->
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex align-items-center">
             <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
@@ -643,4 +667,4 @@
         <!-- Template Main JS File -->
         <script src="${pageContext.request.contextPath}/publicsss/assets/js/main.js"></script>
     </jsp:body>
-</t:home>
+</t:index>

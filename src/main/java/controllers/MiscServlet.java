@@ -1,5 +1,7 @@
 package controllers;
 
+import beans.Product;
+import models.ProductModel;
 import utils.ServletUtils;
 
 import javax.servlet.ServletException;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
+import java.util.Optional;
 
 @WebServlet(name = "MiscServlet", urlPatterns = "/Misc/*")
 @MultipartConfig(
