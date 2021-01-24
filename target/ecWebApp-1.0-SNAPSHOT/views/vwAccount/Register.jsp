@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/publicsss/css/Register.css">
 <t:home>
-  <jsp:attribute name="css">
+   <jsp:attribute name="css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
   </jsp:attribute>
 
@@ -18,14 +18,15 @@
                 return;
             }
 
+            const confirm = $('#txtConfirm').val();
             const password = $('#txtPassword').val();
-            if (password.length === 0) {
+            if (password.length === 0 | confirm.length === 0) {
                 alert('Not available.');
                 return;
             }
-            const confirm = $('#txtConfirm').val();
-            if (confirm.char === 0) {
-                alert('Not available.');
+            if(confirm !== password)
+            {
+                alert('Confirm false.');
                 return;
             }
 
@@ -44,10 +45,7 @@
                     alert('Not available.');
                 }
             });
-
-
         });
-
         $('#txtDOB').datetimepicker({
             format: 'd/m/Y',
             timepicker: false,
@@ -60,44 +58,50 @@
 
     <jsp:body>
         <form method="post" id="frmRegister">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Account Registration</h4>
-                </div>
-                <div class="card-body">
-                    <h5>Account</h5>
-                    <div class="form-group">
-                        <label for="txtUsername">Username</label>
-                        <input type="text" class="form-control" id="txtUsername" name="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPassword">Password</label>
-                        <input type="password" class="form-control" id="txtPassword" name="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtConfirm">Confirm</label>
-                        <input type="password" class="form-control" id="txtConfirm" name="confirm">
-                    </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-xl-9 mx-auto">
+                        <div class="card card-signin flex-row my-5">
+                            <div class="card-img-left d-none d-md-flex">
+                                <!-- Background image for card set in CSS! -->
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center" style="color: #495057"><b>Register</b></h5>
+                                <form class="form-signin">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtUsername" name="username" placeholder="Username" required>
+                                    </div>
 
-                    <h5 class="mt-4">Personal Information</h5>
-                    <div class="form-group">
-                        <label for="txtName">Name</label>
-                        <input type="text" class="form-control" id="txtName" name="name">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="txtPassword" name="password" placeholder="Password" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="txtConfirm" name="confirm" placeholder="Confirm" required>
+                                    </div>
+
+                                    <hr>
+
+                                    <h5 class="mt-4">Personal Information</h5>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtName" name="name" placeholder="Name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="txtEmail" name="email" placeholder="Email" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="txtDOB">Date of Birth</label>
+                                        <input type="text" class="form-control" id="txtDOB" name="dob">
+                                    </div>
+
+                                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                                    <a class="d-block text-center mt-2 small" href="${pageContext.request.contextPath}/Account/Login">Already have account!</a>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="txtEmail">Email</label>
-                        <input type="text" class="form-control" id="txtEmail" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="txtDOB">Date of Birth</label>
-                        <input type="text" class="form-control" id="txtDOB" name="dob">
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-outline-success">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                        Register
-                    </button>
                 </div>
             </div>
         </form>
