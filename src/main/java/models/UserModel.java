@@ -1,5 +1,6 @@
 package models;
 
+import beans.Product;
 import beans.User;
 import org.sql2o.Connection;
 import utils.DbUtils;
@@ -64,5 +65,18 @@ public class UserModel {
                     .executeUpdate();
         }
 
+    }
+    public static List<User> getPerGV() {
+        String sql = "select * from users where permission=1";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql).executeAndFetch(User.class);
+        }
+    }
+
+    public static List<User> getPer() {
+        String sql = "select * from users where permission=0";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql).executeAndFetch(User.class);
+        }
     }
 }

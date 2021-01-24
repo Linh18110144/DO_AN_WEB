@@ -83,6 +83,10 @@
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     Teacher Register
                                 </a>
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/ListUser">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    List User
+                                </a>
                             </c:if>
 
                             <div class="dropdown-divider"></div>

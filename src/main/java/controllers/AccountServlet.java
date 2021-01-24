@@ -1,6 +1,7 @@
 package controllers;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import beans.Product;
 import beans.User;
 import models.UserModel;
 import utils.ServletUtils;
@@ -16,6 +17,7 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @WebServlet(name = "AccountServlet", urlPatterns = "/Account/*")
@@ -215,6 +217,20 @@ public class AccountServlet extends HttpServlet {
                 response.setCharacterEncoding("utf-8");
                 out1.print(!user1.isPresent());
                 out1.flush();
+                break;
+            case "/ListUser":
+                HttpSession session2=request.getSession();
+                User userL = (User) session2.getAttribute("authUser");
+                int id2 = userL.getPermission();
+                if(id2==0 || id2==1){
+                    ServletUtils.redirect("/Home", request, response);
+                    break;
+                }
+                List<User> user4 = UserModel.getPerGV();
+                request.setAttribute("userA", user4);
+                List<User> user5 = UserModel.getPer();
+                request.setAttribute("userB", user5);
+                ServletUtils.forward("/views/vwAccount/User.jsp", request, response);
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
