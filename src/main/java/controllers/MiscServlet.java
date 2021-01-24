@@ -75,8 +75,15 @@ public class MiscServlet extends HttpServlet {
         }
         switch (path) {
             case "/Index":
-                ServletUtils.forward("/views/vwMisc/Index.jsp", request, response);
-                break;
+		int proID = Integer.parseInt(request.getParameter("id"));
+                Optional<Product> c = ProductModel.findByID(proID);
+                if (c.isPresent()) {
+                    request.setAttribute("product5", c.get());
+                    ServletUtils.forward("/views/vwMisc/Index.jsp", request, response);
+                } else {
+                    ServletUtils.redirect("/Home", request, response);
+                }
+                break;                     
             case "/Upload":
                 ServletUtils.forward("/views/vwMisc/Upload.jsp", request, response);
                 break;
