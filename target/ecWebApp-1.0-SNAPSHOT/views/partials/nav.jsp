@@ -16,7 +16,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="${pageContext.request.contextPath}/Home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/Home">Home <span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/Home/About">
@@ -25,15 +26,18 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  Dropdown  </a>
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Course </a>
                 <ul class="dropdown-menu">
                     <c:forEach var="c" items="${categoriesWithDetails}">
-                        <li><a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}" class="dropdown-item" >${c.catName}</a>
+                        <li><a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}"
+                               class="dropdown-item">${c.catName}</a>
                             <ul class="submenu dropdown-menu">
 
                                 <c:forEach var="d" items="${childcategoriesWithDetails}">
                                     <c:if test="${c.catID==d.catID}">
-                                        <li><a href="${pageContext.request.contextPath}/Product/ByChildCat?id=${d.childCatID}" class="dropdown-item">${d.childCatName} </a></li>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/Product/ByChildCat?id=${d.childCatID}"
+                                               class="dropdown-item">${d.childCatName} </a></li>
                                     </c:if>
                                 </c:forEach>
 
@@ -49,19 +53,23 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-        <form id="frmSearch" class="form-inline my-2 my-lg-0"  action="${pageContext.request.contextPath}/Product/Search">
-            <input id="id" name="id" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></form>
-            <a class="btn btn-outline-success my-2 my-sm-0" href="javascript: $('#frmSearch').submit();">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                Search
-            </a>
+        <form id="frmSearch" class="form-inline my-2 my-lg-0"
+              action="${pageContext.request.contextPath}/Product/Search">
+            <input id="id" name="id" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        </form>
+        <a class="btn btn-outline-success my-2 my-sm-0" href="javascript: $('#frmSearch').submit();">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            Search
+        </a>
 
         <ul class="navbar-nav">
             <c:choose>
                 <c:when test="${auth}">
-                    <form id="frmLogout" method="post" action="${pageContext.request.contextPath}/Account/Logout"></form>
+                    <form id="frmLogout" method="post"
+                          action="${pageContext.request.contextPath}/Account/Logout"></form>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             Hi, <b>${authUser.name}</b>!
                         </a>
@@ -70,6 +78,13 @@
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 Profile
                             </a>
+                            <c:if test="${(authUser.permission)==2}">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/TeacherRegister">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Teacher Register
+                                </a>
+                            </c:if>
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="javascript: $('#frmLogout').submit();">
                                 <i class="fa fa-sign-out" aria-hidden="true"></i>

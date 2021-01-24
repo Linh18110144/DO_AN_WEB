@@ -1,5 +1,6 @@
 package models;
 
+import beans.Category;
 import beans.Product;
 import org.sql2o.Connection;
 import utils.DbUtils;
@@ -95,6 +96,18 @@ public class ProductModel {
                     .addParameter("limit", limit1)
                     .addParameter("offset", offset1)
                     .executeAndFetch(Product.class);
+        }
+    }
+    public static void add(Product c){
+        final String sql = "INSERT INTO products (ProName) VALUES (:proname)";
+        final String sql1 = "INSERT INTO products (TinyDes) VALUES (:tinydes)";
+        try(Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("proname", c.getProName())
+                    .executeUpdate();
+            con.createQuery(sql1)
+                    .addParameter("tinydes", c.getTinyDes())
+                    .executeUpdate();
         }
     }
 }

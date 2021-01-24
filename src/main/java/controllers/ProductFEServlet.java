@@ -22,36 +22,10 @@ public class ProductFEServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
         if (path == null || path.equals("/")) {
-            path = "/Index";
+            path = "/Home";
         }
         switch (path) {
-            case "/Index":
-                int catID1 = ProductModel.countAll();
-                request.setAttribute("catID", catID1);
 
-                final int LIMIT1 = 6;
-                int currentPage1 = 1;
-                if (request.getParameter("page1") != null) {
-                    currentPage1 = Integer.parseInt(request.getParameter("page1"));
-                }
-                int offset1 = (currentPage1 - 1) * LIMIT1;
-                request.setAttribute("currentPage1", currentPage1);
-
-                int total1 = catID1;
-                int nPages1 = total1 / LIMIT1;
-                if (total1 % LIMIT1 > 0)
-                    nPages1++;
-                int[] pages1 = new int[nPages1];
-                for (int i = 0; i < nPages1; i++) {
-                    pages1[i] = i + 1;
-                }
-                request.setAttribute("pages1", pages1);
-
-                List<Product> list1 = ProductModel.getAll(LIMIT1, offset1);
-
-                request.setAttribute("products1", list1);
-                ServletUtils.forward("/views/vwProduct/Index.jsp", request, response);
-                break;
             case "/ByCat":
                 int catID = Integer.parseInt(request.getParameter("id"));
                 request.setAttribute("catID", catID);

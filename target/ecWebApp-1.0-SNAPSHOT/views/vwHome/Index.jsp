@@ -43,7 +43,7 @@
                             <li><a href="#team">Team</a></li>
                             <li><a href="#contact">Contact</a></li>
 
-                            <li class="get-started"><a href="${pageContext.request.contextPath}/Product">Get Started</a></li>
+                            <li class="get-started"><a href="${pageContext.request.contextPath}/Product/ByCat?id=1">Get Started</a></li>
                         </ul>
                     </nav><!-- .nav-menu -->
                 </div><!-- End Header Container -->
@@ -54,7 +54,7 @@
             <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
                 <h1>OnlineAcademy.</h1>
                 <h2>Nền tảng hỗ trợ giảng dạy đào tạo trực tuyến</h2>
-                <a href="${pageContext.request.contextPath}/Product" class="btn-get-started scrollto">Tìm hiểu ngay!</a>
+                <a href="${pageContext.request.contextPath}/Product/ByCat?id=1" class="btn-get-started scrollto">Tìm hiểu ngay!</a>
             </div>
         </section><!-- End Hero -->
 
@@ -294,12 +294,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/1/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>App 1</h4>
-                                    <p>App</p>
+                                    <h4>Lập trình ứng dụng Android trong 6 tuần</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/1/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
                                         <a href="${pageContext.request.contextPath}/publicsss/portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
@@ -308,12 +308,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/2/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Web 3</h4>
-                                    <p>Web</p>
+                                    <h4>Xây dựng Single-Page Web App với AngularJS Routing</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/2/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -321,12 +321,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/3/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>App 2</h4>
-                                    <p>App</p>
+                                    <h4>Tự học lập trình website chỉ trong 6 tuần</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/3/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -334,12 +334,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/4/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Card 2</h4>
-                                    <p>Card</p>
+                                    <h4>Làm trang web của riêng bạn với HTML, CSS & Javascript</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/4/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -347,12 +347,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/5/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Web 2</h4>
-                                    <p>Web</p>
+                                    <h4>Cấu trúc dữ liệu và giải thuật</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/5/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -360,12 +360,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/6/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>App 3</h4>
-                                    <p>App</p>
+                                    <h4>Mạng internet vận hành như thế nào?</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/6/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -373,12 +373,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/7/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Card 1</h4>
-                                    <p>Card</p>
+                                    <h4>Tìm kiếm và khai thác thông tin hiệu quả trên internet</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/7/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -386,12 +386,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/8/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Card 3</h4>
-                                    <p>Card</p>
+                                    <h4>Hacker mũ trắng và bảo mật thông tin</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/8/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -399,12 +399,12 @@
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                             <div class="portfolio-wrap">
-                                <img src="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                                <img src="${pageContext.request.contextPath}/publicsss/imgs/sp/9/main_thumbs.jpg" class="img-fluid" alt="">
                                 <div class="portfolio-info">
-                                    <h4>Web 3</h4>
-                                    <p>Web</p>
+                                    <h4>Robotics căn bản - Chế tạo Robot điều khiển bằng bluetooth</h4>
+
                                     <div class="portfolio-links">
-                                        <a href="${pageContext.request.contextPath}/publicsss/assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                        <a href="${pageContext.request.contextPath}/publicsss/imgs/sp/9/main_thumbs.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
                                     </div>
                                 </div>
                             </div>

@@ -5,7 +5,7 @@ public class Product {
     String ProName, TinyDes, FullDes, FullDes1, FullDes2;
     int Price, Quantity, CatID, ChildCatID;
 
-    public Product() {
+    public Product(int i, String s, String name) {
     }
 
     public Product(int proID, String proName, String tinyDes, String fullDes, String fullDes1, String fullDes2, int price, int quantity, int catID, int childCatID) {

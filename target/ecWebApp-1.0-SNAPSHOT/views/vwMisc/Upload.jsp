@@ -28,11 +28,11 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="txtCourseName">Course</label>
-                        <input type="text" class="form-control" id="txtCourseName" name="CourseName" autofocus>
+                        <input type="text" class="form-control" id="txtCourseName" name="ProName" autofocus>
                     </div>
                     <div class="form-group">
                         <label for="txtDesc">Course Description</label>
-                        <input type="text" class="form-control" id="txtDesc" name="Desc">
+                        <input type="text" class="form-control" id="txtDesc" name="TinyDes">
                     </div>
                     <div class="form-group">
                         <input type="file" id="fuMain" name="fuMain" multiple>

@@ -1,6 +1,8 @@
 package controllers;
 
+import beans.Category;
 import beans.Product;
+import models.CategoryModel;
 import models.ProductModel;
 import utils.ServletUtils;
 
@@ -38,8 +40,6 @@ public class MiscServlet extends HttpServlet {
     }
 
     private void postUpload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(request.getParameter("CourseName"));
-        System.out.println(request.getParameter("Desc"));
 
         for (Part part : request.getParts()) {
             String contentDisp = part.getHeader("content-disposition");
@@ -50,7 +50,7 @@ public class MiscServlet extends HttpServlet {
                     int idx = tmp.indexOf('=') + 2;
                     String filename = tmp.substring(idx, tmp.length() - 1);
 
-                    String targetDir = this.getServletContext().getRealPath("publicsss/clips");
+                    String targetDir = this.getServletContext().getRealPath("publicsss/imgs");
                     File dir = new File(targetDir);
                     if (!dir.exists()) {
                         dir.mkdir();
@@ -66,7 +66,7 @@ public class MiscServlet extends HttpServlet {
     }
 
     private void postEditor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String desc = request.getParameter("desc");
+        String desc = request.getParameter("tinydes");
         System.out.println(desc);
         ServletUtils.forward("/views/vwMisc/Editor.jsp", request, response);
     }
@@ -78,7 +78,7 @@ public class MiscServlet extends HttpServlet {
         }
         switch (path) {
             case "/Index":
-		int proID = Integer.parseInt(request.getParameter("id"));
+		        int proID = Integer.parseInt(request.getParameter("id"));
                 Optional<Product> c = ProductModel.findByID(proID);
                 if (c.isPresent()) {
                     request.setAttribute("product5", c.get());

@@ -23,6 +23,9 @@ public class AccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
         switch (path) {
+            case "/TeacherRegister":
+                postTeacherRegister(request, response);
+                break;
             case "/Register":
                 postRegister(request, response);
                 break;
@@ -60,6 +63,28 @@ public class AccountServlet extends HttpServlet {
         ServletUtils.redirect("/Home", request, response);
     }
 
+    private void postTeacherRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String password = request.getParameter("password");
+        String bcryptHashString = BCrypt.withDefaults().hashToString(12, password.toCharArray());
+
+
+        Date dob = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            dob = formatter.parse(request.getParameter("dob"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        String username = request.getParameter("username");
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        int permission = 1;
+        User user = new User(-1, username, bcryptHashString, name, email, dob, permission);
+        UserModel.add(user);
+        ServletUtils.redirect("/Home", request, response);
+    }
+
     private void postLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -71,10 +96,20 @@ public class AccountServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("auth", true);
                 session.setAttribute("authUser", user.get());
-
+                User user2= (User) session.getAttribute("authUser");
+                int id=user2.getPermission();
                 String url = (String) session.getAttribute("retUrl");
-                if (url == null) url = "/Home";
-                ServletUtils.redirect(url, request, response);
+                if(id==1 || id==2)
+                {
+                    if (url == null) url = "/Admin/Product";
+                    ServletUtils.redirect(url, request, response);
+                }
+                if(id==0)
+                {
+                    if (url == null) url = "/Home";
+                    ServletUtils.redirect(url, request, response);
+                }
+
             } else {
                 request.setAttribute("hasError", true);
                 request.setAttribute("errorMessage", "Invalid password.");
@@ -100,6 +135,29 @@ public class AccountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
         switch (path) {
+            case "/TeacherRegister":
+                HttpSession session = request.getSession();
+                User user2 = (User) session.getAttribute("authUser");
+                int id = user2.getPermission();
+                if(id==2){
+                    ServletUtils.forward("/views/vwAccount/Admin.jsp", request, response);
+                }
+                else{
+                    ServletUtils.forward("/views/vwHome/Index.jsp", request, response);
+                }
+                break;
+            case "/Teacher":
+                HttpSession session1 = request.getSession();
+                User user3 = (User) session1.getAttribute("authUser");
+                int id1 = user3.getPermission();
+                System.out.println(id1);
+                if(id1==1){
+                    ServletUtils.redirect("/Admin/Product", request, response);
+                }
+                else{
+                    ServletUtils.forward("/views/vwHome/Index.jsp", request, response);
+                }
+                break;
             case "/Register":
                 ServletUtils.forward("/views/vwAccount/Register.jsp", request, response);
                 break;
