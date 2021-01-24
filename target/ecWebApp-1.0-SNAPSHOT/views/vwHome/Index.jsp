@@ -52,7 +52,7 @@
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex align-items-center">
             <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-                <h1>OnlineAcademy.</h1>
+                <h1>OnlineAcademy</h1>
                 <h2>Nền tảng hỗ trợ giảng dạy đào tạo trực tuyến</h2>
                 <a href="${pageContext.request.contextPath}/Product/ByCat?id=1" class="btn-get-started scrollto">Tìm hiểu ngay!</a>
             </div>

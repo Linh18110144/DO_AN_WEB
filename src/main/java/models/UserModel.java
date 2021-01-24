@@ -52,4 +52,17 @@ public class UserModel {
                     .executeUpdate();
         }
     }
+
+    public static void Update(User c) {
+        final String sql = "update users set name = :name, email=:email, password =: password where id = :UserID";
+        try(Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("name", c.getName())
+                    .addParameter("email", c.getEmail())
+                    .addParameter("password", c.getPassword())
+                    .addParameter("UserID", c.getId())
+                    .executeUpdate();
+        }
+
+    }
 }

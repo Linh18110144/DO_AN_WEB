@@ -35,10 +35,40 @@ public class AccountServlet extends HttpServlet {
             case "/Logout":
                 postLogout(request, response);
                 break;
+            case "/Profile":
+                postProfile(request, response);
+                break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
         }
+    }
+
+    private void postProfile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("authUser");
+
+        String password = request.getParameter("password");
+        BCrypt.Result result1 = BCrypt.verifyer().verify(password.toCharArray(), user.getPassword());
+
+        if (result1.verified == false)
+        {
+            request.setAttribute("errorMessage", "Invalid password.");
+            ServletUtils.forward("/views/vwAccount/Profile.jsp", request, response);
+        }
+
+        String Name = request.getParameter("name");
+        String Email = request.getParameter("email");
+        String NewPassword = request.getParameter("newpassword");
+        String bcryptHashString1 = BCrypt.withDefaults().hashToString(12, NewPassword.toCharArray());
+
+        user.setName(Name);
+        user.setEmail(Email);
+        user.setPassword(bcryptHashString1);
+
+
+        UserModel.Update(user);
+        ServletUtils.redirect("/Home", request, response);
     }
 
     private void postRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
