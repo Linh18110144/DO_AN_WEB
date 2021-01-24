@@ -2,7 +2,7 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <link href="${pageContext.request.contextPath}/publicsss//css/About.css" rel="stylesheet">
 
-<t:home>
+<t:All>
     <jsp:body>
         <div class="card">
             <section id="hero" class="d-flex align-items-center">
@@ -23,4 +23,4 @@
             </section><!-- End Hero -->
         </div>
     </jsp:body>
-</t:home>
+</t:All>

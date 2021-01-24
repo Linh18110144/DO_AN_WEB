@@ -15,6 +15,8 @@
 </head>
 
 <body>
+<jsp:include page="../../views/partials/nav.jsp"/>
+
 <div class="container-fluid mt-3">
             <jsp:doBody />
 </div>

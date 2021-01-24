@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<t:home>
+<t:All>
     <jsp:body>
         <div class="card">
             <div class="container">
@@ -82,4 +82,4 @@
         </div>
         </div>
     </jsp:body>
-</t:home>
+</t:All>

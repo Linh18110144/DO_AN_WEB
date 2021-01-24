@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<t:home
->
+<t:All>
     <jsp:body>
         <div class="card">
         <div class="card-header">
@@ -22,4 +21,4 @@
             <li>OnlineAcademy có thể thay đổi, bổ sung hoặc sửa chữa thỏa thuận này bất cứ lúc nào và sẽ công bố rõ trên Website hoặc các kênh truyền thông chính thức khác của OnlineAcademy.</li>
         </div>
     </jsp:body>
-</t:home>
+</t:All>
