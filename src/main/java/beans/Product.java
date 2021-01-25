@@ -2,19 +2,20 @@ package beans;
 
 public class Product {
     int ProID;
-    String ProName, TinyDes, FullDes, FullDes1, FullDes2;
+    String ProName, TinyDes, FullDes, FullDes1, FullDes2, Content;
     int Price, Quantity, CatID, ChildCatID;
 
     public Product(int i, String s, String name) {
     }
 
-    public Product(int proID, String proName, String tinyDes, String fullDes, String fullDes1, String fullDes2, int price, int quantity, int catID, int childCatID) {
+    public Product(int proID, String proName, String tinyDes, String fullDes, String fullDes1, String fullDes2, String content, int price, int quantity, int catID, int childCatID) {
         ProID = proID;
         ProName = proName;
         TinyDes = tinyDes;
         FullDes = fullDes;
         FullDes1 = fullDes1;
         FullDes2 = fullDes2;
+        Content = content;
         Price = price;
         Quantity = quantity;
         CatID = catID;
@@ -43,6 +44,10 @@ public class Product {
 
     public String getFullDes2() {
         return FullDes2;
+    }
+
+    public String getContent() {
+        return Content;
     }
 
     public int getPrice() {
@@ -83,6 +88,10 @@ public class Product {
 
     public void setFullDes2(String fullDes2) {
         FullDes2 = fullDes2;
+    }
+
+    public void getContent(String content) {
+        Content = content;
     }
 
     public void setPrice(int price) {
