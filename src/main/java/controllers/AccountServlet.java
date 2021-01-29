@@ -131,7 +131,7 @@ public class AccountServlet extends HttpServlet {
                 User user2= (User) session.getAttribute("authUser");
                 int id=user2.getPermission();
                 String url = (String) session.getAttribute("retUrl");
-                if(id==1 || id==2)
+                if(id==1)
                 {
                     if (url == null) url = "/Admin/Product";
                     ServletUtils.redirect(url, request, response);
@@ -139,6 +139,11 @@ public class AccountServlet extends HttpServlet {
                 if(id==0)
                 {
                     if (url == null) url = "/Home";
+                    ServletUtils.redirect(url, request, response);
+                }
+                if(id==2)
+                {
+                    if (url == null) url = "/Account/ListUser";
                     ServletUtils.redirect(url, request, response);
                 }
 

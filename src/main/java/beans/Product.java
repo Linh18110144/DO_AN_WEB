@@ -90,7 +90,7 @@ public class Product {
         FullDes2 = fullDes2;
     }
 
-    public void getContent(String content) {
+    public void setContent(String content) {
         Content = content;
     }
 
