@@ -24,6 +24,21 @@ public class UserModel {
         }
     }
 
+    public static Optional<User> findByID(int id) {
+        final String sql = "select * from users where id = :userID";
+        try (Connection con = DbUtils.getConnection()) {
+            List<User> list = con.createQuery(sql)
+                    .addParameter("userID", id)
+                    .executeAndFetch(User.class);
+
+            if (list.size() == 0) {
+                return Optional.empty();
+            }
+
+            return Optional.ofNullable(list.get(0));
+        }
+    }
+
     public static Optional<User> findByEmail(String email) {
         final String sql = "select * from users where email = :email";
         try (Connection con = DbUtils.getConnection()) {
@@ -55,7 +70,7 @@ public class UserModel {
     }
 
     public static void Update(User c) {
-        final String sql = "update users set name = :name, email=:email, password =: password where id = :UserID";
+        final String sql = "update users set name = :name, email=:email, password=:password where id = :UserID";
         try(Connection con = DbUtils.getConnection()) {
             con.createQuery(sql)
                     .addParameter("name", c.getName())
@@ -77,6 +92,16 @@ public class UserModel {
         String sql = "select * from users where permission=0";
         try (Connection con = DbUtils.getConnection()) {
             return con.createQuery(sql).executeAndFetch(User.class);
+        }
+    }
+
+    public static void UpdateDes(User c) {
+        final String sql = "update users set des = :des where id = :UserID";
+        try(Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("des", c.getDes())
+                    .addParameter("UserID", c.getId())
+                    .executeUpdate();
         }
     }
 }

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/publicsss/css/Register.css">
 <t:home>

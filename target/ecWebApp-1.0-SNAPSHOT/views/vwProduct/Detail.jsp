@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <jsp:useBean id="product" scope="request" type="beans.Product"/>
+<jsp:useBean id="userDetail" scope="request" type="beans.User"/>
 
 <t:main>
     <jsp:body>
@@ -83,6 +84,21 @@
                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                             <div class="card-body">
                                 <p class="card-text">${product.content}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFive">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Thông tin giảng viên
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <h2><a href="#" style="text-decoration: none; "> ${userDetail.name}</a></h2>
+                                <p class="card-text">${userDetail.des}</p>
                             </div>
                         </div>
                     </div>

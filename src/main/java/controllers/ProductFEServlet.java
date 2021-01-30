@@ -1,7 +1,9 @@
 package controllers;
 
 import beans.Product;
+import beans.User;
 import models.ProductModel;
+import models.UserModel;
 import utils.ServletUtils;
 
 import javax.servlet.ServletException;
@@ -68,8 +70,12 @@ public class ProductFEServlet extends HttpServlet {
             case "/Detail":
                 int proID = Integer.parseInt(request.getParameter("id"));
                 Optional<Product> c = ProductModel.findByID(proID);
+                int userID= c.get().getUserID();
+                Optional<User> d = UserModel.findByID(userID);
+
                 if (c.isPresent()) {
                     request.setAttribute("product", c.get());
+                    request.setAttribute("userDetail", d.get());
                     ServletUtils.forward("/views/vwProduct/Detail.jsp", request, response);
                 } else {
                     ServletUtils.redirect("/Home", request, response);

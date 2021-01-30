@@ -73,10 +73,18 @@
                             Hi, <b>${authUser.name}</b>!
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <c:if test="${(authUser.permission)==0}">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 Profile
                             </a>
+                            </c:if>
+                            <c:if test="${(authUser.permission)==1}">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/ProfileTea">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Profile
+                                </a>
+                            </c:if>
                             <c:if test="${(authUser.permission)==2}">
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/TeacherRegister">
                                     <i class="fa fa-user" aria-hidden="true"></i>
