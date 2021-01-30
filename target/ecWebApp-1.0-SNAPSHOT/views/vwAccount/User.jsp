@@ -8,10 +8,10 @@
 <t:home>
     <jsp:body>
         <div class="card">
-            <div class="card-header btn"  data-toggle="collapse" data-target="#noidungcard">
+            <div class="card-header btn" style="color: whitesmoke;background-color: dimgrey"  data-toggle="collapse" data-target="#noidungcard">
                 <h1>Danh sách giáo viên</h1>
             </div>
-            <div class="card-body collapse"  data-toggle="collapse"  aria-expanded="false" id="noidungcard">
+            <div class="card-body collapse"data-toggle="collapse"  aria-expanded="false" id="noidungcard">
                 <div class="card">
 
                     <c:choose>
@@ -54,7 +54,7 @@
         </div>
 
         <div class="card">
-            <div class="card-header btn"  data-toggle="collapse" data-target="#noidungcard1">
+            <div class="card-header btn" style="color: whitesmoke;background-color: dimgrey"  data-toggle="collapse" data-target="#noidungcard1">
                 <h1>Danh sách học viên</h1>
             </div>
             <div class="card-body collapse"  data-toggle="collapse"  aria-expanded="false" id="noidungcard1">

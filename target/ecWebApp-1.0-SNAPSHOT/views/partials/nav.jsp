@@ -32,15 +32,14 @@
                         <li><a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}"
                                class="dropdown-item">${c.catName}</a>
                             <ul class="submenu dropdown-menu">
-
-                                <c:forEach var="d" items="${childcategoriesWithDetails}">
+                               <c:forEach var="d" items="${childcategoriesWithDetails}">
                                     <c:if test="${c.catID==d.catID}">
                                         <li>
                                             <a href="${pageContext.request.contextPath}/Product/ByChildCat?id=${d.childCatID}"
-                                               class="dropdown-item">${d.childCatName} </a></li>
+                                               class="dropdown-item">${d.childCatName} </a>
+                                        </li>
                                     </c:if>
                                 </c:forEach>
-
                             </ul>
                         </li>
                     </c:forEach>
