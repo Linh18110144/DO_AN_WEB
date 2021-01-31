@@ -2,6 +2,7 @@ package models;
 
 import beans.Category;
 import beans.Product;
+import beans.Watchlist;
 import org.sql2o.Connection;
 import utils.DbUtils;
 
@@ -110,4 +111,26 @@ public class ProductModel {
                     .executeUpdate();
         }
     }
+
+    public static List<Watchlist> findByUserID(int idUser) {
+        String sql = "select * from watchlists where userID=:idUser";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("idUser", idUser)
+                    .executeAndFetch(Watchlist.class);
+        }
+    }
+
+    public static List<Product> findWatchByID(int id) {
+        String sql = "select ProName from products where ProID=:proID";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("proID", id)
+                    .executeAndFetch(Product.class);
+        }
+    }
+
+
+
+
 }

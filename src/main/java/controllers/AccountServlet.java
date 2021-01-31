@@ -3,7 +3,10 @@ package controllers;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import beans.Product;
 import beans.User;
+import beans.Watchlist;
+import models.ProductModel;
 import models.UserModel;
+import models.WatchlistModel;
 import utils.ServletUtils;
 
 import javax.servlet.ServletException;
@@ -37,6 +40,9 @@ public class AccountServlet extends HttpServlet {
             case "/Logout":
                 postLogout(request, response);
                 break;
+            case "/Watchlist":
+                postWatchlist(request, response);
+                break;
             case "/Profile":
                 postProfile(request, response);
                 break;
@@ -47,6 +53,18 @@ public class AccountServlet extends HttpServlet {
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
         }
+    }
+
+    private void postWatchlist(HttpServletRequest request, HttpServletResponse response) {
+
+        int idWatch=Integer.parseInt(request.getParameter("userID"));
+        int proIDWatch = Integer.parseInt(request.getParameter("proID"));
+        //List<Product> proNameWatch = ProductModel.findWatchByID(proIDWatch);
+        //String proNameWatch1=proNameWatch.toString().substring(0);
+
+        String proNameWatch1=request.getParameter("proName");
+        Watchlist watchlist1=new Watchlist(idWatch,proIDWatch,proNameWatch1);
+        WatchlistModel.add(watchlist1);
     }
 
     private void postProfileTea(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -226,6 +244,9 @@ public class AccountServlet extends HttpServlet {
                 request.setAttribute("hasError", false);
                 ServletUtils.forward("/views/vwAccount/Login.jsp", request, response);
                 break;
+            case "/Watchlist":
+                ServletUtils.forward("/views/vwProduct/Index.jsp", request, response);
+                break;
             case "/Profile":
                 HttpSession sessionPro = request.getSession();
                 User userPro = (User) sessionPro.getAttribute("authUser");
@@ -235,6 +256,10 @@ public class AccountServlet extends HttpServlet {
                 }else if(idPro==1){
                     ServletUtils.redirect("/Account/ProfileTea", request, response);
                 } else{
+                    int idUser=userPro.getId();
+                    List<Watchlist> list2 = ProductModel.findByUserID(idUser);
+                    request.setAttribute("watchlistPro", list2);
+
                     ServletUtils.forward("/views/vwAccount/Profile.jsp", request, response);
                 }
                 break;

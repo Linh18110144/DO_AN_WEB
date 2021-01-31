@@ -6,7 +6,7 @@
 <jsp:useBean id="product" scope="request" type="beans.Product"/>
 <jsp:useBean id="userDetail" scope="request" type="beans.User"/>
 
-<t:main>
+<t:product>
     <jsp:body>
         <div class="card">
             <div class="card-header">
@@ -109,4 +109,4 @@
 
         </div>
     </jsp:body>
-</t:main>
+</t:product>
