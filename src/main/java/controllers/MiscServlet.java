@@ -2,6 +2,7 @@ package controllers;
 
 import beans.Category;
 import beans.Product;
+import beans.User;
 import models.CategoryModel;
 import models.ProductModel;
 import utils.ServletUtils;
@@ -9,12 +10,10 @@ import utils.ServletUtils;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 @WebServlet(name = "MiscServlet", urlPatterns = "/Misc/*")
@@ -78,20 +77,49 @@ public class MiscServlet extends HttpServlet {
         }
         switch (path) {
             case "/Index":
-		        int proID = Integer.parseInt(request.getParameter("id"));
-                Optional<Product> c = ProductModel.findByID(proID);
-                if (c.isPresent()) {
-                    request.setAttribute("product5", c.get());
-                    ServletUtils.forward("/views/vwMisc/Index.jsp", request, response);
-                } else {
+                HttpSession sessionMisc = request.getSession();
+                User userCate = (User) sessionMisc.getAttribute("authUser");
+                int idMisc = userCate.getPermission();
+                if(idMisc==2){
                     ServletUtils.redirect("/Home", request, response);
+                }else if(idMisc==0){
+                    ServletUtils.redirect("/Home", request, response);
+                } else{
+                    int proID = Integer.parseInt(request.getParameter("id"));
+                    Optional<Product> c = ProductModel.findByID(proID);
+                    if (c.isPresent()) {
+                        request.setAttribute("product5", c.get());
+                        ServletUtils.forward("/views/vwMisc/Index.jsp", request, response);
+                    } else {
+                        ServletUtils.redirect("/Home", request, response);
+                    }
                 }
+
                 break;                     
             case "/Upload":
-                ServletUtils.forward("/views/vwMisc/Upload.jsp", request, response);
+                HttpSession sessionUp = request.getSession();
+                User userUp = (User) sessionUp.getAttribute("authUser");
+                int idUp = userUp.getPermission();
+                if(idUp==2){
+                    ServletUtils.redirect("/Home", request, response);
+                }else if(idUp==0){
+                    ServletUtils.redirect("/Home", request, response);
+                } else{
+                    ServletUtils.forward("/views/vwMisc/Upload.jsp", request, response);
+                }
                 break;
             case "/Editor":
-                ServletUtils.forward("/views/vwMisc/Editor.jsp", request, response);
+                HttpSession sessionEdit = request.getSession();
+                User userEdit = (User) sessionEdit.getAttribute("authUser");
+                int idEdit = userEdit.getPermission();
+                if(idEdit==2){
+                    ServletUtils.redirect("/Home", request, response);
+                }else if(idEdit==0){
+                    ServletUtils.redirect("/Home", request, response);
+                } else{
+                    ServletUtils.forward("/views/vwMisc/Editor.jsp", request, response);
+                }
+
                 break;
             default:
                 ServletUtils.redirect("/NotFound", request, response);

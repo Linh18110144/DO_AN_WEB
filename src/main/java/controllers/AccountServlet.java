@@ -240,8 +240,8 @@ public class AccountServlet extends HttpServlet {
                 HttpSession session1 = request.getSession();
                 User user3 = (User) session1.getAttribute("authUser");
                 int id1 = user3.getPermission();
-                System.out.println(id1);
-                if(id1==2){
+
+                if(id1==1){
                     ServletUtils.redirect("/Admin/Product", request, response);
                 }
                 else{
@@ -285,10 +285,12 @@ public class AccountServlet extends HttpServlet {
             case "/Watchlist":
                 HttpSession sessionWatch = request.getSession();
                 User userWatch = (User) sessionWatch.getAttribute("authUser");
-                int idUser=userWatch.getId();
-                List<Watchlist> list2 = ProductModel.findByUserID(idUser);
-                request.setAttribute("watchlistPro", list2);
-                ServletUtils.forward("/views/vwAccount/Watchlist.jsp", request, response);
+
+                    int idUser=userWatch.getId();
+                    List<Watchlist> list2 = ProductModel.findByUserID(idUser);
+                    request.setAttribute("watchlistPro", list2);
+                    ServletUtils.forward("/views/vwAccount/Watchlist.jsp", request, response);
+
                 break;
             case "/WatchlistAdd":
                 int proID = Integer.parseInt(request.getParameter("id"));
