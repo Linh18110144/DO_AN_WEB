@@ -32,7 +32,7 @@
                         <li><a href="${pageContext.request.contextPath}/Product/ByCat?id=${c.catID}"
                                class="dropdown-item">${c.catName}</a>
                             <ul class="submenu dropdown-menu">
-                               <c:forEach var="d" items="${childcategoriesWithDetails}">
+                                <c:forEach var="d" items="${childcategoriesWithDetails}">
                                     <c:if test="${c.catID==d.catID}">
                                         <li>
                                             <a href="${pageContext.request.contextPath}/Product/ByChildCat?id=${d.childCatID}"
@@ -74,24 +74,36 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <c:if test="${(authUser.permission)==0}">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                Profile
-                            </a>
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile">
+                                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                                    Profile
+                                </a>
                             </c:if>
                             <c:if test="${(authUser.permission)==1}">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/Product">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    Courses
+                                </a>
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/ProfileTea">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
                                     Profile
                                 </a>
                             </c:if>
                             <c:if test="${(authUser.permission)==2}">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/Category">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    Admin Catelory
+                                </a>
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/Product">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    Admin Product
+                                </a>
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/TeacherRegister">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                     Teacher Register
                                 </a>
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/ListUser">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <i class="fa fa-users" aria-hidden="true"></i>
                                     List User
                                 </a>
                             </c:if>

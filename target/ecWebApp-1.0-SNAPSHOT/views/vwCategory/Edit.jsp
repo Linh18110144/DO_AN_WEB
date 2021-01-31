@@ -4,7 +4,7 @@
 
 <jsp:useBean id="category" scope="request" type="beans.Category"/>
 
-<t:main>
+<t:product>
     <jsp:body>
         <form method="post">
             <div class="card">
@@ -44,4 +44,4 @@
             </div>
         </form>
     </jsp:body>
-</t:main>
+</t:product>

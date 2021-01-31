@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<t:main>
+<t:product>
     <jsp:body>
         <form method="post">
             <div class="card">
@@ -30,4 +30,4 @@
             </div>
         </form>
     </jsp:body>
-</t:main>
+</t:product>

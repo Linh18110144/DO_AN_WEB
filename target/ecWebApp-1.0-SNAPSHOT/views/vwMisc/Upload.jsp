@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:main>
+<t:home>
   <jsp:attribute name="css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css"/>
   </jsp:attribute>
@@ -47,4 +47,4 @@
             </div>
         </form>
     </jsp:body>
-</t:main>
+</t:home>

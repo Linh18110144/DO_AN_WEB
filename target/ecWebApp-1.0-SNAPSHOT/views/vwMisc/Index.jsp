@@ -5,7 +5,7 @@
 
 <jsp:useBean id="product5" scope="request" type="beans.Product"/>
 
-<t:main>
+<t:home>
     <jsp:attribute name="css">
         <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
     </jsp:attribute>
@@ -24,5 +24,5 @@
 
         </div>
     </jsp:body>
-</t:main>
+</t:home>
 

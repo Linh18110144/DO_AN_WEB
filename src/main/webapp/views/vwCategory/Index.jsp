@@ -4,7 +4,7 @@
 
 <jsp:useBean id="categories" scope="request" type="java.util.List<beans.Category>"/>
 
-<t:main>
+<t:product>
     <jsp:body>
         <div class="card">
             <div class="card-header">
@@ -51,4 +51,4 @@
             </c:choose>
         </div>
     </jsp:body>
-</t:main>
+</t:product>

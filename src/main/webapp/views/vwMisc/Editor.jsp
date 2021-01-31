@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:main>
+<t:home>
   <jsp:attribute name="js">
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
@@ -38,4 +38,4 @@
             </div>
         </form>
     </jsp:body>
-</t:main>
+</t:home>
