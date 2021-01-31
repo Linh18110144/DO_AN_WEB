@@ -1,9 +1,11 @@
 package controllers;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import beans.Category;
 import beans.Product;
 import beans.User;
 import beans.Watchlist;
+import models.CategoryModel;
 import models.ProductModel;
 import models.UserModel;
 import models.WatchlistModel;
@@ -52,8 +54,6 @@ public class AccountServlet extends HttpServlet {
                 break;
         }
     }
-
-
 
     private void postProfileTea(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -301,6 +301,7 @@ public class AccountServlet extends HttpServlet {
                 request.setAttribute("userB", user5);
                 ServletUtils.forward("/views/vwAccount/User.jsp", request, response);
                 break;
+
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;

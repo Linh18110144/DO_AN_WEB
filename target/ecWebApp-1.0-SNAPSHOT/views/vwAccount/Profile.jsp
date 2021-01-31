@@ -66,8 +66,7 @@
                                                     src="${pageContext.request.contextPath}/publicsss/imgs/avarta.jpg"
                                                     class="img-radius" alt="User-Profile-Image"></div>
                                             <h6 class="f-w-600">${authUser.name}</h6>
-                                            <p>Web Designer</p> <i
-                                                class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                            <p>Student</p>
                                             <a class="btn btn-lg btn-outline-dark " href="${pageContext.request.contextPath}/Account/Watchlist" role="button">
                                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                                 Watchlist
