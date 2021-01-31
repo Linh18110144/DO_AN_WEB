@@ -4,7 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
-<jsp:useBean id="watchlistPro" scope="request" type="java.util.List<beans.Watchlist>"/>
 
 <t:home>
    <jsp:attribute name="css">
@@ -97,46 +96,13 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <a class="btn btn-lg btn-outline-info " style="display: flex; justify-content: center" href="${pageContext.request.contextPath}/Account/Watchlist" role="button">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    Watchlist
+                </a>
+            </div>
         </form>
 
-        <div class="card">
-            <div class="card-header">
-                <h4>Watchlist</h4>
-            </div>
-            <c:choose>
-                <c:when test="${watchlistPro.size() == 0}">
-                    <div class="card-body">
-                        <p class="card-text">Không có dữ liệu.</p>
-                    </div>
-                </c:when>
-                <c:otherwise>
-                    <div class="card-body">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Detail</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="c" items="${watchlistPro}">
-                                <tr>
-                                    <th scope="row">${c.proID}</th>
-                                    <td>${c.proName}</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Product/Detail?id=${c.proID}" role="button">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        Details
-                                        </a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                </c:otherwise>
-            </c:choose>
-        </div>
     </jsp:body>
 </t:home>

@@ -2,11 +2,11 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/publicsss/css/product.css">
 <jsp:useBean id="authUser" scope="session" type="beans.User"/>
 <jsp:useBean id="products1" scope="request" type="java.util.List<beans.Product>"/>
 
-<t:home>
+<t:product>
     <jsp:body>
         <div class="card">
             <div class="card-header">
@@ -34,16 +34,11 @@
                                         <div class="product-img"> <a href="${pageContext.request.contextPath}/Misc/Index?id=${c.proID}" data-abc="true"> <img width="600px" height="200px" src="${pageContext.request.contextPath}/publicsss/imgs/sp/${c.proID}/main_thumbs.jpg" alt="${c.proName}" title="${c.proName}" class="card-img-top"/> </a> <span class="text-center"><i class="fa fa-rupee"></i> <fmt:formatNumber value="${c.price}" type="number"/></span>
                                             <div class="product-action">
                                                 <div class="product-action-style"> <a href="${pageContext.request.contextPath}/Product/Detail?id=${c.proID}"> <i class="fa fa-eye"></i> </a>
-                                                    <form method="POST" id="frmWatchlist" onsubmit="return false">
-                                                        <input style="display: none" type="text" id="txtUserID" name="userID" value="${authUser.id}">                                                        <a href="${pageContext.request.contextPath}/Account/Watchlist?id=${c.proID}" onclick="document.getElementById('frmWatchlist').submit();">
-                                                        <input style="display: none" type="text" id="txtProID" name="proID" value="${c.proID}">                                                        <a href="${pageContext.request.contextPath}/Account/Watchlist?id=${c.proID}" onclick="document.getElementById('frmWatchlist').submit();">
-                                                        <input style="display: none" type="text" id="txtProName" name="proName" value="${c.proName}">                                                        <a href="${pageContext.request.contextPath}/Account/Watchlist?id=${c.proID}" onclick="document.getElementById('frmWatchlist').submit();">
 
-                                                        <a href="${pageContext.request.contextPath}/Account/Watchlist" onclick="document.getElementById('frmWatchlist').submit();">
-                                                            <i class="fa fa-heart"></i>
-                                                        </a>
-                                                    </form>
-                                                    <a href="#"> <i class="fa fa-shopping-cart"></i> </a> </div>
+                                                    <a href="#"> <i class="fa fa-heart"></i> </a>
+                                                    <a href="#"> <i class="fa fa-shopping-cart"></i> </a>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="card-footer"><h5 class="card-title">${c.proName}</h5></div>
@@ -86,4 +81,4 @@
             </c:choose>
         </div>
     </jsp:body>
-</t:home>
+</t:product>
