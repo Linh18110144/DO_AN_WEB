@@ -255,6 +255,7 @@ public class AccountServlet extends HttpServlet {
                     ServletUtils.forward("/views/vwAccount/Profile.jsp", request, response);
                 }
                 break;
+            
             case "/ProfileTea":
                 HttpSession sessionProTea = request.getSession();
                 User userProTea = (User) sessionProTea.getAttribute("authUser");
