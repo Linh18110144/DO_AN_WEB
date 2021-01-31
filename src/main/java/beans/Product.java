@@ -2,19 +2,17 @@ package beans;
 
 public class Product {
     int ProID;
-    String ProName, TinyDes, FullDes, FullDes1, FullDes2, Content;
+    String ProName, TinyDes, FullDes, Content;
     int Price, Quantity, CatID, ChildCatID, UserID;
 
     public Product(int i, String s, String name) {
     }
 
-    public Product(int proID, String proName, String tinyDes, String fullDes, String fullDes1, String fullDes2, String content, int price, int quantity, int catID, int childCatID, int userID) {
+    public Product(int proID, String proName, String tinyDes, String fullDes, String content, int price, int quantity, int catID, int childCatID, int userID) {
         ProID = proID;
         ProName = proName;
         TinyDes = tinyDes;
         FullDes = fullDes;
-        FullDes1 = fullDes1;
-        FullDes2 = fullDes2;
         Content = content;
         Price = price;
         Quantity = quantity;
@@ -37,14 +35,6 @@ public class Product {
 
     public String getFullDes() {
         return FullDes;
-    }
-
-    public String getFullDes1() {
-        return FullDes1;
-    }
-
-    public String getFullDes2() {
-        return FullDes2;
     }
 
     public String getContent() {
@@ -85,14 +75,6 @@ public class Product {
 
     public void setFullDes(String fullDes) {
         FullDes = fullDes;
-    }
-
-    public void setFullDes1(String fullDes1) {
-        FullDes1 = fullDes1;
-    }
-
-    public void setFullDes2(String fullDes2) {
-        FullDes2 = fullDes2;
     }
 
     public void setContent(String content) {
