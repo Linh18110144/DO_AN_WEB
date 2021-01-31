@@ -121,16 +121,4 @@ public class ProductModel {
         }
     }
 
-    public static List<Product> findWatchByID(int id) {
-        String sql = "select ProName from products where ProID=:proID";
-        try (Connection con = DbUtils.getConnection()) {
-            return con.createQuery(sql)
-                    .addParameter("proID", id)
-                    .executeAndFetch(Product.class);
-        }
-    }
-
-
-
-
 }

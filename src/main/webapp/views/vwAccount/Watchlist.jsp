@@ -35,7 +35,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Detail</th>
+                                <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -45,8 +45,12 @@
                                     <td>${c.proName}</td>
                                     <td>
                                         <a class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/Product/Detail?id=${c.proID}" role="button">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        Details
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            Details
+                                        </a>
+                                        <a class="btn btn-primary" href="#" role="button">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            Delete
                                         </a>
                                     </td>
                                 </tr>

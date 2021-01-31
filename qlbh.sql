@@ -3,15 +3,15 @@
 
  Source Server         : local
  Source Server Type    : MySQL
- Source Server Version : 100417
+ Source Server Version : 100416
  Source Host           : localhost:3306
  Source Schema         : qlbh
 
  Target Server Type    : MySQL
- Target Server Version : 100417
+ Target Server Version : 100416
  File Encoding         : 65001
 
- Date: 31/01/2021 20:15:52
+ Date: 01/02/2021 00:19:48
 */
 
 SET NAMES utf8mb4;
@@ -199,10 +199,31 @@ CREATE TABLE `users`  (
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES (38, 'admin', '$2a$12$kTH.5MpVkCzAc3l/xA.Oz.Jbtdsqxg7BQ8zY6/lMIeOv24yPKSO6e', 'administrator', 'admin@gmail.com', '', '2020-12-29', 2);
-INSERT INTO `users` VALUES (37, '123456', '$2a$12$UcO5FINcYAsSWa4c.CgJx.9eNvDOqhbGkMlS/amZfI0K/WEyFQZzm', 'Linh', 'Linh@gmail.com', '', '2020-12-29', 0);
+INSERT INTO `users` VALUES (37, '123456', '$2a$12$rMARCumzxnG9cQkGcdoeyuOqBJ8btpEIoKzXJVKlGzM5Nnmtvft3K', 'Linh', 'Cha@gmail.com', '', '2020-12-29', 0);
 INSERT INTO `users` VALUES (39, '12345678', '$2a$12$GX4YtYti2itU12Py.9g5MOBUeG3Snvjx6ms.2GGw4e3rwqqOHChTS', 'Nam', 'Nam@gmail.com', '', '2020-12-29', 0);
 INSERT INTO `users` VALUES (40, 'teacher', '$2a$12$4uHKuj46C3zMIVmxU19OQua1l4KOhlyJlfB9ezNucLXVqu67Ck7Ua', 'caca', 'caochieu56@gmail.com', 'Tôi là giáo viên có 10 năm kinh nghiệm.\r\nNhững bài học ở đây đã được tôi đúc kết qua quá trình giảng dạy ở trường nên mọi kiến thức được tôi truyền tải là những kiến thức trọng tâm nhất.\r\nBài giảng sinh động, trực quang, dễ hiểu.', '2020-12-30', 1);
 INSERT INTO `users` VALUES (41, 'teacher1', '$2a$12$yFjwZ1NI56xmHm28c/fU6u4BkDKdCrrQKsTRh4FDJawzVzL1Y42VO', 'linh cao', 'Nam@gmail.com', 'Nam@gmail.com', '2021-01-06', 1);
 INSERT INTO `users` VALUES (42, 'teacher3', '$2a$12$sZX5gGh/ZZmJwKc7v0xqzu.lKikm.Aa7.iUg/hC2Lt.uujd1jpIxi', 'Cao Thị Thùy Linh', '18110144@student.hcmute.edu.vn', '18110144@student.hcmute.edu.vn', '2021-01-31', 1);
+
+-- ----------------------------
+-- Table structure for watchlists
+-- ----------------------------
+DROP TABLE IF EXISTS `watchlists`;
+CREATE TABLE `watchlists`  (
+  `userID` int(11) NOT NULL,
+  `proID` int(11) NOT NULL,
+  `proName` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`userID`, `proID`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of watchlists
+-- ----------------------------
+INSERT INTO `watchlists` VALUES (0, 2, 'Xây dựng Single-Page Web App với AngularJS Routing');
+INSERT INTO `watchlists` VALUES (0, 3, 'Tá»± há»c láº­p trÃ¬nh website chá» trong 6 tuáº§n');
+INSERT INTO `watchlists` VALUES (37, 1, 'Lập trình ứng dụng Android trong 6 tuần');
+INSERT INTO `watchlists` VALUES (37, 2, 'Xây dựng Single-Page Web App với AngularJS Routing');
+INSERT INTO `watchlists` VALUES (37, 5, 'Mạng internet vận hành như thế nào?');
+INSERT INTO `watchlists` VALUES (38, 3, 'Tự học lập trình website chỉ trong 6 tuần');
 
 SET FOREIGN_KEY_CHECKS = 1;
