@@ -110,7 +110,7 @@ public class AccountServlet extends HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         int permission = 0;
-        String des =null;
+        String des ="";
         User user = new User(-1, username, bcryptHashString, name, email,des, dob, permission);
         UserModel.add(user);
         ServletUtils.redirect("/Home", request, response);
@@ -135,7 +135,7 @@ public class AccountServlet extends HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         int permission = 1;
-        String des=null;
+        String des="";
         User user = new User(-1, username, bcryptHashString, name, email, des, dob, permission);
         UserModel.add(user);
         ServletUtils.redirect("/Home", request, response);

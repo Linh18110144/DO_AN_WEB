@@ -56,13 +56,14 @@ public class UserModel {
 
 
     public static void add(User user) {
-        final String sql = "INSERT INTO users (username, password, name, email, dob, permission) VALUES (:username,:password,:name,:email,:dob,:permission)";
+        final String sql = "INSERT INTO users (username, password, name, email, des, dob, permission) VALUES (:username,:password,:name,:email, :des,:dob,:permission)";
         try (Connection con = DbUtils.getConnection()) {
             con.createQuery(sql)
                     .addParameter("username", user.getUsername())
                     .addParameter("password", user.getPassword())
                     .addParameter("name", user.getName())
                     .addParameter("email", user.getEmail())
+                    .addParameter("des", user.getDes())
                     .addParameter("dob", user.getDob())
                     .addParameter("permission", user.getPermission())
                     .executeUpdate();
